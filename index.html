@@ -11,7 +11,7 @@
     <style>
         body {
             width: 100%;
-            height: 100vh;
+            height: 100vh;  
             display: flex;
             align-items: center;
             justify-content: center;
@@ -19,17 +19,29 @@
         .wrapper {
             display: flex;
             flex-direction: column;
-            padding: 0 15px;
             align-items: center;
-            height: 100px;
+            height: 60vh;
             max-width: 500px;
+            padding: 0 15px;
+            width: 90%;
+            position: relative;
+        }
+        button#btn {
+            position: absolute;
+            bottom: 120px;
+        }
+        p#vop {
+            /* position: absolute;
+            top: 50%;
+            transform: translateY(-50%); */
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <button class="btn btn-lg btn-success mb-3" id="btn">Начать</button>
-        <p class="animate__animated animate__faster text-center" style="font-size: 21px;" id="vop"></p>
+        <p class="animate__animated animate__faster text-center mb-3" style="font-size: 21px;" id="vop"></p>
+        <button class="btn btn-lg btn-success" id="btn">Начать</button>
     </div>
     <script>
         var btn = document.getElementById("btn");
