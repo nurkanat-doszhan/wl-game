@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button class="btn btn-lg btn-primary mb-3" id="btn">Начать</button>
+        <p style="font-size: 22px;" id="vop"></p>
+    </div>
+    <script>
+        var btn = document.getElementById("btn");
+        var vop = document.getElementById("vop");
+        var j = [
+            "Вопрос 1",
+            "Вопрос 2",
+            "Вопрос 3",
+            "Вопрос 4",
+            "Вопрос 5",
+            "Вопрос 6",
+            "Вопрос 7",
+            "Вопрос 8",
+        ];
+        btn.onclick = function () {
+            btn.innerHTML = "Вопрос"
+            var rnd = Math.floor(Math.random() * Object.keys(j).length)
+            vop.innerHTML = j[rnd]
+            console.log(rnd);
+        };
+    </script>
+</body>
+</html>
