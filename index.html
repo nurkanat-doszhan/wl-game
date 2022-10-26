@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust Game</title>
+    <link rel="shortcut icon" href="/2d2288bd-9ece-43fd-9ded-6178f965d4ad.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
             width: 100%;
@@ -19,33 +21,38 @@
             flex-direction: column;
             align-items: center;
             height: 100px;
-            width: 500px;
+            max-width: 500px;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <button class="btn btn-lg btn-primary mb-3" id="btn">Начать</button>
-        <p style="font-size: 22px;" id="vop"></p>
+        <p class="animate__animated animate__faster text-center" style="font-size: 21px;" id="vop"></p>
     </div>
     <script>
         var btn = document.getElementById("btn");
         var vop = document.getElementById("vop");
         var j = [
-            "Вопрос 1",
-            "Вопрос 2",
-            "Вопрос 3",
-            "Вопрос 4",
-            "Вопрос 5",
-            "Вопрос 6",
-            "Вопрос 7",
-            "Вопрос 8",
+            "Спрятаться под стол и оттуда кричать: «А я в домике!» до тех пор, пока вас не найдут",
+            "Изобразить любой вид спорта, чтобы его угадали",
+            "Набрать в рот воды и просидеть так две минуты. Участники при этом стараются рассмешить и задают каверзные вопросы. В ответ можно мычать и отвечать жестами",
+            "Передать ход следующему игроку",
+            "Выстроить за минуту всех гостей по росту",
+            "Поздравить всех женщин с выдуманным праздником",
+            "Молчать 1 ход",
+            "Съешьте 2 несочетаемых продукта",
         ];
         btn.onclick = function () {
-            btn.innerHTML = "Вопрос"
+            btn.innerHTML = "Клик"
+            
             var rnd = Math.floor(Math.random() * Object.keys(j).length)
             vop.innerHTML = j[rnd]
-            console.log(rnd);
+            vop.classList.remove('animate__bounceIn')
+            vop.classList.add('animate__bounceIn')
+            var timer = setTimeout(function(){
+                vop.classList.remove('animate__bounceIn')
+            }, 300)
         };
     </script>
 </body>
